@@ -20,7 +20,7 @@ echo "Directory structure created."
 echo "[2/8] Backing up i3 config..."
 
 if [ -d ~/.config/i3 ]; then
-    cp ~/.config/i3/* $BACKUP_DIR/i3
+    cp -r ~/.config/i3/* $BACKUP_DIR/i3
     echo "i3 config backed up"
 else
     echo "i3 config could not found"
@@ -29,7 +29,7 @@ fi
 echo "[3/8] Backing up polybar..."
 
 if [ -d ~/.config/polybar ]; then
-    cp ~/.config/polybar/* $BACKUP_DIR/polybar
+    cp -r ~/.config/polybar/* $BACKUP_DIR/polybar
     echo "Polybar config backed up"
 else
     echo "Polybar config not found"
