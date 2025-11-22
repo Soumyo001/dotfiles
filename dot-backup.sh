@@ -12,12 +12,12 @@ else
     IS_ARCH=false
 fi
 
-echo "[1/8] Creating backup directories..."
+echo "[1/9] Creating backup directories..."
 
-mkdir -p $BACKUP_DIR/{i3,polybar,picom,gtk,x11,scripts,wallpapers}
+mkdir -p $BACKUP_DIR/{i3,polybar,picom,gtk,x11,scripts,vesktop,wallpapers}
 echo "Directory structure created."
 
-echo "[2/8] Backing up i3 config..."
+echo "[2/9] Backing up i3 config..."
 
 if [ -d ~/.config/i3 ]; then
     cp -r ~/.config/i3/* $BACKUP_DIR/i3
@@ -26,7 +26,7 @@ else
     echo "i3 config could not found"
 fi
 
-echo "[3/8] Backing up polybar..."
+echo "[3/9] Backing up polybar..."
 
 if [ -d ~/.config/polybar ]; then
     cp -r ~/.config/polybar/* $BACKUP_DIR/polybar
@@ -35,7 +35,7 @@ else
     echo "Polybar config not found"
 fi
 
-echo "[4/8] Backing up picom..."
+echo "[4/9] Backing up picom..."
 
 if [ -d ~/.config/picom ]; then
     cp -r ~/.config/picom/* $BACKUP_DIR/picom/
@@ -44,7 +44,7 @@ else
     echo "Picom config not found"
 fi
 
-echo "[5/8] Backing up GTK configs..."
+echo "[5/9] Backing up GTK configs..."
 
 gtk2_ok=false
 gtk3_ok=false
@@ -65,7 +65,7 @@ else
     echo "Some GTK configs failed to back up"
 fi
 
-echo "[6/8] Backing up X11 settings..."
+echo "[6/9] Backing up X11 settings..."
 
 [ -f ~/.Xresources ] && cp ~/.Xresources $BACKUP_DIR/x11/
 
@@ -78,7 +78,7 @@ fi
 
 echo "X11 settings backed up"
 
-echo "[7/8] Backing up custom scripts..."
+echo "[7/9] Backing up custom scripts..."
 
 SCRIPT_DIR="$BACKUP_DIR/scripts"
 
@@ -96,8 +96,16 @@ do
     fi
 done
 
+echo "[8/9] copying vesktop themes"
+if [ -d ~/.config/vesktop/themes ]; then
+    cp -r ~/.config/vesktop/themes $BACKUP_DIR/vesktop/
+    echo "Copied vesktop themes"
+else
+    echo "No vesktop theme found"
+fi
+
 if $IS_ARCH; then
-    echo "[8/8] Arch Linux detected - installing dependencies..."
+    echo "[9/9] Arch Linux detected - installing dependencies..."
 
     PKGS=(
         i3-wm
