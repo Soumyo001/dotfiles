@@ -127,6 +127,7 @@ if $IS_ARCH; then
     
     echo "Installing Bibata AUR package (yay needed)..."
     yay -S --noconfirm bibata-cursor-theme-bin
+    yay -S --noconfirm vesktop-bin
     
 else
     echo "Not Arch Linux - skipping package installation."
