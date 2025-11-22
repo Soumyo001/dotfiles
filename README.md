@@ -1,7 +1,17 @@
 # 🧩 i3 Dotfiles  
-A clean, minimal, and fully reproducible i3 setup for Arch Linux — including Polybar, Picom (currently not using it), GTK theming, cursor consistency, theme presets, and a complete backup/restore automation system.
+A clean, minimal, and fully reproducible i3 setup for Arch Linux (EndeavourOS) — including Polybar, Picom (currently not using it), GTK theming, cursor consistency, theme presets, and a complete backup/restore automation system.
 
 ---
+
+## 📸 Screenshots
+
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+    <img src="docs/image.png" alt="image" width="100%">
+    <img src="docs/image2.png" alt="image1" width="100%">
+    <img src="docs/image3.png" alt="image2" width="100%">
+    <img src="docs/image4.png" alt="image3" width="100%">
+</div>
+
 
 ## 🚀 Features
 
