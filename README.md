@@ -5,12 +5,16 @@ A clean, minimal, and fully reproducible i3 setup for Arch Linux (EndeavourOS) �
 
 ## 📸 Screenshots
 
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-    <img src="docs/image.png" alt="image" width="100%">
-    <img src="docs/image2.png" alt="image1" width="100%">
-    <img src="docs/image3.png" alt="image2" width="100%">
-    <img src="docs/image4.png" alt="image3" width="100%">
-</div>
+<table>
+  <tr>
+    <td><img src="docs/image.png" width="100%"></td>
+    <td><img src="docs/image2.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/image3.png" width="100%"></td>
+    <td><img src="docs/image4.png" width="100%"></td>
+  </tr>
+</table>
 
 
 ## 🚀 Features
