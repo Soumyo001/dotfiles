@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ==========================================
-#  Apply Static Theme (GTK2/GTK3/GTK4/Cur)
-#  This script will apply the following:
+#  Apply Static Theme (GTK2/GTK3/GTK4/Cursor)
+#  This script applies:
 #  - GTK2 theme
 #  - GTK3 theme
 #  - GTK4 theme
@@ -32,21 +32,21 @@ echo "=========================================="
 # Theme Validation
 # ==========================================
 
-# Check if GTK theme exists
-if ! [[ -d "/usr/share/themes/$GTK_THEME" && -d "$HOME/.themes/$GTK_THEME" ]]; then
-    echo "❌ Error: GTK theme '$GTK_THEME' does not exist!"
+# GTK theme
+if [[ ! -d "/usr/share/themes/$GTK_THEME" && ! -d "$HOME/.themes/$GTK_THEME" ]]; then
+    echo "❌ Error: GTK theme '$GTK_THEME' not found!"
     exit 1
 fi
 
-# Check if Icon theme exists
-if ! [[ -d "/usr/share/icons/$ICON_THEME" && -d "$HOME/.icons/$ICON_THEME" ]]; then
-    echo "❌ Error: Icon theme '$ICON_THEME' does not exist!"
+# Icon theme
+if [[ ! -d "/usr/share/icons/$ICON_THEME" && ! -d "$HOME/.icons/$ICON_THEME" ]]; then
+    echo "❌ Error: Icon theme '$ICON_THEME' not found!"
     exit 1
 fi
 
-# Check if Cursor theme exists
-if ! [[ -d "/usr/share/icons/$CURSOR_THEME" && -d "$HOME/.icons/$CURSOR_THEME" ]]; then
-    echo "❌ Error: Cursor theme '$CURSOR_THEME' does not exist!"
+# Cursor theme
+if [[ ! -d "/usr/share/icons/$CURSOR_THEME" && ! -d "$HOME/.icons/$CURSOR_THEME" ]]; then
+    echo "❌ Error: Cursor theme '$CURSOR_THEME' not found!"
     exit 1
 fi
 
