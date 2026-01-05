@@ -1,0 +1,4 @@
+configuration {
+  font: "JetBrains Mono 10";
+}
+@theme "~/.local/share/rofi/themes/arc_dark_transparent_colors.rasi"
