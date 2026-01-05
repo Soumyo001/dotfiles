@@ -88,7 +88,7 @@ if command -v gsettings >/dev/null 2>&1; then
             echo "titlebar-font=$WM_TITLE_FONT"
         } > "$BACKUP_DIR/dconf/wm-fonts.dconf"
 
-        cat > "$BACKUP_DIR/dconf/RESTORE-fonts.txt" <<EOF
+        cat > "$BACKUP_DIR/dconf/RESTORE-fonts-README.txt" <<EOF
 Restore commands:
   dconf load /org/gnome/desktop/interface/ < "$BACKUP_DIR/dconf/interface-fonts.dconf"
   dconf load /org/gnome/desktop/wm/preferences/ < "$BACKUP_DIR/dconf/wm-fonts.dconf"
@@ -97,14 +97,14 @@ EOF
         echo "Saved minimal font dconf files to $BACKUP_DIR/dconf/"
     
     else
-        cat > "$BACKUP_DIR/dconf/RESTORE-fonts.txt" <<EOF
+        cat > "$BACKUP_DIR/dconf/RESTORE-fonts-README.txt" <<EOF
 dconf not found. use equivalent gsettings:
   gsettings set org.gnome.desktop.interface font-name $IF_FONT_NAME
   gsettings set org.gnome.desktop.interface monospace-font-name $IF_MONO_NAME
   gsettings set org.gnome.desktop.interface document-font-name $IF_DOC_NAME
   gsettings set org.gnome.desktop.wm.preferences titlebar-font $WM_TITLE_FONT
 EOF
-        echo "dconf not found; wrote gsettings-only restore instructions to $BACKUP_DIR/dconf/RESTORE-fonts.txt"
+        echo "dconf not found; wrote gsettings-only restore instructions to $BACKUP_DIR/dconf/RESTORE-fonts-README.txt"
     fi
 
 else
