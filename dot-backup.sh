@@ -13,8 +13,8 @@ else
 fi
 
 echo "[1/11] Creating backup directories..."
-mkdir -p "$BACKUP_DIR"/{i3,polybar,picom,gtk,x11,scripts,vesktop,wallpapers,fontconfig,browsers,fonts,dconf}
-echo "Directory structure created."
+mkdir -p "$BACKUP_DIR"/{i3,polybar,picom,gtk,x11,scripts,vesktop,wallpapers,fontconfig,browsers,dconf}
+echo "Directory structure created at $BACKUP_DIR."
 
 echo "[2/11] Backing up i3 config..."
 if [ -d ~/.config/i3 ]; then
