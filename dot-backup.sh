@@ -12,11 +12,11 @@ else
     IS_ARCH=false
 fi
 
-echo "[1/12] Creating backup directories..."
+echo "[1/11] Creating backup directories..."
 mkdir -p "$BACKUP_DIR"/{i3,polybar,picom,gtk,x11,scripts,vesktop,wallpapers,fontconfig,browsers,fonts,dconf}
 echo "Directory structure created."
 
-echo "[2/12] Backing up i3 config..."
+echo "[2/11] Backing up i3 config..."
 if [ -d ~/.config/i3 ]; then
     cp -r ~/.config/i3/* "$BACKUP_DIR/i3"
     echo "i3 config backed up"
@@ -24,7 +24,7 @@ else
     echo "i3 config could not found"
 fi
 
-echo "[3/12] Backing up polybar..."
+echo "[3/11] Backing up polybar..."
 if [ -d ~/.config/polybar ]; then
     cp -r ~/.config/polybar/* "$BACKUP_DIR/polybar"
     echo "Polybar config backed up"
@@ -32,7 +32,7 @@ else
     echo "Polybar config not found"
 fi
 
-echo "[4/12] Backing up picom..."
+echo "[4/11] Backing up picom..."
 if [ -d ~/.config/picom ]; then
     cp -r ~/.config/picom/* "$BACKUP_DIR/picom/"
     echo "Picom config backed up"
@@ -40,7 +40,7 @@ else
     echo "Picom config not found"
 fi
 
-echo "[5/12] Backing up Fontconfig..."
+echo "[5/11] Backing up Fontconfig..."
 if [ -d ~/.config/fontconfig ]; then
     cp -r ~/.config/fontconfig/* "$BACKUP_DIR/fontconfig/"
     echo "Fontconfig backed up"
@@ -48,7 +48,7 @@ else
     echo "Fontconfig not found"
 fi
 
-echo "[6/12] Backing up GTK configs..."
+echo "[6/11] Backing up GTK configs..."
 gtk2_ok=false
 gtk3_ok=false
 gtk4_ok=false
@@ -68,7 +68,7 @@ else
     echo "Some GTK configs failed to back up"
 fi
 
-echo "[7/12] Backing up GNOME font keys (dconf/gsettings)..."
+echo "[7/11] Backing up GNOME font keys (dconf/gsettings)..."
 
 if command -v gsettings >/dev/null 2>&1; then
     # Read current values exactly as gsettings stores them (includes quotes)
@@ -111,7 +111,7 @@ else
     echo "gsettings not found; skipping GNOME font backup."
 fi
 
-echo "[8/12] Backing up X11 settings..."
+echo "[8/11] Backing up X11 settings..."
 [ -f ~/.Xresources ] && cp ~/.Xresources "$BACKUP_DIR/x11/"
 [ -d ~/.icons/default ] && cp -r ~/.icons/default "$BACKUP_DIR/x11/"
 
@@ -122,7 +122,7 @@ fi
 
 echo "X11 settings backed up"
 
-echo "[10/12] Backing up custom scripts..."
+echo "[9/11] Backing up custom scripts..."
 SCRIPT_DIR="$BACKUP_DIR/scripts"
 
 for s in static-theme.sh \
@@ -139,7 +139,7 @@ do
     fi
 done
 
-echo "[11/12] copying vesktop themes"
+echo "[10/11] copying vesktop themes"
 if [ -d ~/.config/vesktop/themes ]; then
     cp -r ~/.config/vesktop/themes "$BACKUP_DIR/vesktop/"
     echo "Copied vesktop themes"
@@ -148,7 +148,7 @@ else
 fi
 
 if $IS_ARCH; then
-    echo "[12/12] Arch Linux detected - installing dependencies..."
+    echo "[11/11] Arch Linux detected - installing dependencies..."
     PKGS=(
         i3-wm
         polybar
