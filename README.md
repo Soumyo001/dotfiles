@@ -91,7 +91,7 @@ They are **not included yet**, but will be added in upcoming updates:
 | Script | Purpose |
 |--------|---------|
 | `dot-backup.sh` | Full dotfile backup *(available)* |
-| `apply-static-theme.sh` | Apply all theme settings at once *(coming soon)* |
+| `apply-static-theme.sh` | Apply all theme settings at once *(available)* |
 | `static-theme-switcher.sh` | Change theme globally *(coming soon)* |
 | `theme-preset-save.sh` | Save current theme into a named preset *(coming soon)* |
 | `theme-preset-load.sh` | Load presets with a Rofi menu *(coming soon)* |
