@@ -77,10 +77,6 @@ if command -v gsettings >/dev/null 2>&1; then
     IF_DOC_NAME=$(gsettings get org.gnome.desktop.interface document-font-name 2>/dev/null)
     WM_TITLE_FONT=$(gsettings get org.gnome.desktop.wm.preferences titlebar-font 2>/dev/null)
 
-    # Save minimal dconf load files (only the keys you care about)
-    # These files are intended to be used with:
-    #   dconf load /org/gnome/desktop/interface/ < interface-fonts.dconf
-    #   dconf load /org/gnome/desktop/wm/preferences/ < wm-fonts.dconf
     if command -v dconf >/dev/null 2>&1; then
         {
             echo "font-name=$IF_FONT_NAME"
@@ -94,8 +90,8 @@ if command -v gsettings >/dev/null 2>&1; then
 
         cat > "$BACKUP_DIR/dconf/RESTORE-fonts.txt" <<EOF
 Restore commands:
-  dconf load /org/gnome/desktop/interface/ < $BACKUP_DIR/dconf/interface-fonts.dconf
-  dconf load /org/gnome/desktop/wm/preferences/ < $BACKUP_DIR/dconf/wm-fonts.dconf
+  dconf load /org/gnome/desktop/interface/ < "$BACKUP_DIR/dconf/interface-fonts.dconf"
+  dconf load /org/gnome/desktop/wm/preferences/ < "$BACKUP_DIR/dconf/wm-fonts.dconf"
 EOF
 
         echo "Saved minimal font dconf files to $BACKUP_DIR/dconf/"
