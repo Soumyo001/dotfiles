@@ -197,35 +197,35 @@ else
     echo "oh-my-zsh not installed"
 fi
 
-# if $IS_ARCH; then
-#     echo "[16/16] Arch Linux detected - installing dependencies..."
-#     PKGS=(
-#         i3-wm
-#         polybar
-#         picom
-#         rofi
-#         redshift
-#         copyq
-#         ttf-jetbrains-mono
-#         materia-gtk-theme
-#         papirus-icon-theme
-#         xdg-user-dirs
-#         feh
-#         lxappearance
-#         dconf
-#     )
+if $IS_ARCH; then
+    echo "[16/16] Arch Linux detected - installing dependencies..."
+    PKGS=(
+        i3-wm
+        polybar
+        picom
+        rofi
+        redshift
+        copyq
+        ttf-jetbrains-mono
+        materia-gtk-theme
+        papirus-icon-theme
+        xdg-user-dirs
+        feh
+        lxappearance
+        dconf
+    )
 
-#     echo "Installing: ${PKGS[*]}"
+    echo "Installing: ${PKGS[*]}"
 
-#     sudo pacman -S --needed --noconfirm "${PKGS[@]}"
+    sudo pacman -S --needed --noconfirm "${PKGS[@]}"
     
-#     echo "Installing Bibata AUR package (yay needed)..."
-#     yay -S --noconfirm bibata-cursor-theme-bin
-#     yay -S --noconfirm vesktop-bin
+    echo "Installing Bibata AUR package (yay needed)..."
+    yay -S --noconfirm bibata-cursor-theme-bin
+    yay -S --noconfirm vesktop-bin
     
-# else
-#     echo "Not Arch Linux - skipping package installation."
-# fi
+else
+    echo "Not Arch Linux - skipping package installation."
+fi
 
 
 echo "[optional] Backing up wallpapers..."
