@@ -216,7 +216,6 @@ if $IS_ARCH; then
         ttf-jetbrains-mono
         materia-gtk-theme
         papirus-icon-theme
-        bibata-cursor-theme
         xdg-user-dirs
         feh
         lxappearance
