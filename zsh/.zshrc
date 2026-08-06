@@ -107,10 +107,37 @@ alias ff='fastfetch'
 
 ff
 
+# user level executables
+export PATH="$HOME/.local/bin:$PATH"
+
+#pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+#cuda
 export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
+
+# chrome path
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+
+# Flutter
+export PATH="$HOME/development/flutter/bin:$PATH"
+
+# Android SDK
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
+
+# dotnet
+export SSL_CERT_DIR="$HOME/.aspnet/dev-certs/trust:/etc/ssl/certs"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+# End of LM Studio CLI section
+
+ulimit -l unlimited

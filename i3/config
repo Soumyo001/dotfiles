@@ -304,7 +304,7 @@ bindsym $mod+p exec --no-startup-id ~/.config/i3/scripts/audio-device-switch
 ## App shortcuts
 bindsym $mod+n exec --no-startup-id /usr/bin/thunar
 # bindsym Print exec --no-startup-id scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
-bindsym Print exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id ksnip -r
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/power-profiles
@@ -389,7 +389,7 @@ for_window [class="urxvt"] border pixel 1
 # autostart applications/services on login: #
 #############################################
 
-# make sure it loads gtk configs
+## make sure it loads gtk configs
 exec_always $HOME/.config/i3/scripts/import-gsettings
 
 ## compositor
@@ -616,12 +616,11 @@ exec --no-startup-id $HOME/.config/i3/scripts/wallcycle.sh
 
 
 bindsym $mod+minus move scratchpad
-bindsym $mod+equal scratchpad show
+bindsym $mod+equal scratchpad show; floating toggle
 for_window [class="Google Chrome"] floating disable
 
 exec --no-startup-id bash -c "sleep 3 && vesktop"
 exec --no-startup-id bash -c "sleep 3 && qbittorrent"
-exec --no-startup-id bash -c "sleep 3 && whatsdesk"
 exec --no-startup-id bash -c "sleep 3 && easyeffects"
 
 # exec --no-startup-id redshift -c ~/.config/redshift/redshift.conf
